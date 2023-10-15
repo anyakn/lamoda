@@ -16,5 +16,6 @@ print(new_text)
 '''
 with open('output.txt', 'w+', encoding='utf8') as f_out:
     print(r.text, file=f_out)
+
 '''
 
