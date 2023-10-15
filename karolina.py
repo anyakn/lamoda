@@ -1,11 +1,12 @@
-import urllib
+import requests
 
 query = input('Введите ваш запрос: ')
 query = query.replace(' ', '+')
 query = query.lower()
-url = f"https://google.com/search?q={query}"
+url = 'https://www.lamoda.ru/catalogsearch/result/?q='+query+'&sort=price_asc'
 
+# url = url+'&page='+ str(number)
 print(url)
-#response = requests.get(url)
-# with open('output.txt', 'w+', encoding='utf8') as f_out:
-#    print(response.text, file=f_out)
+r = requests.get(url)
+with open('output.txt', 'w+', encoding='utf8') as f_out:
+    print(r.text, file=f_out)
